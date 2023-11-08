@@ -5,11 +5,11 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>STAYPROPERTY - Контакты</title>
-	<meta property="og:title" content="STAYPROPERTY - Контакты">
+	<title>STAYPROPERTY - Каталоги</title>
+	<meta property="og:title" content="STAYPROPERTY - Каталоги">
 	<meta property="og:description" content="Описание">
 	<meta property="og:url" content="/">
-	<meta property="og:site_name" content="STAYPROPERTY - Контакты">
+	<meta property="og:site_name" content="STAYPROPERTY - Каталоги">
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -89,60 +89,113 @@
 								<a href="index.html" class="breadcrumb__link">Главная</a>
 							</li>
 							<li class="breadcrumb__item">
-								<a href="contacts.html" class="breadcrumb__link">Контакты</a>
+								<a href="catalogs.html" class="breadcrumb__link">Каталоги</a>
 							</li>
 						</ol>
 					</nav>
 				</div>
 			</div>
 			<!-- end of breadcrumb -->
-			<!-- contacts -->
-			<section class="contacts page-section" id="contacts">
+			<!-- catalogs -->
+			<section class="catalogs page-section" id="catalogs">
 				<div class="container">
 					<div class="page-top">
-						<h1 class="page-top__heading">Контакты</h1>
+						<h1 class="page-top__heading">Каталоги</h1>
 					</div>
-					<div class="contacts__wrap">
-						<div class="contacts__left">
-							<ul class="contacts__list">
-								<li class="contacts__item">
-									<a href="tel:905301782916" class="contacts__link">+90 530 178 2916</a>
-								</li>
-								<li class="contacts__item">
-									<a href="mailto:office@stayproperty.com" class="contacts__link">office@stayproperty.com</a>
-								</li>
-							</ul>
-							<address class="contacts__address">Oba Mah., Mesut Cd., No: 54/A – 07400 Alanya / Antalya / Turkey</address>
-						</div>
-						<div class="contacts__right">
-							<div class="contacts__controls">
-								<a href="tel:905301782916" class="contacts__control">
-									<svg>
-										<use xlink:href="img/sprite.svg#icon-phone"></use>
-									</svg>
-								</a>
-								<a href="mailto:office@stayproperty.com" class="contacts__control">
-									<svg>
-										<use xlink:href="img/sprite.svg#icon-email"></use>
-									</svg>
-								</a>
-								<a href="#" class="contacts__control">
-									<svg>
-										<use xlink:href="img/sprite.svg#icon-telegram"></use>
-									</svg>
-								</a>
-								<a href="#" class="contacts__control">
-									<svg>
-										<use xlink:href="img/sprite.svg#icon-whatsapp"></use>
-									</svg>
-								</a>
-								<a href="#" class="contacts__control">Приехать в офис</a>
+					<div class="catalogs__wrapper">
+						<article class="catalogs-card catalogs__item" style="--bg: url(../img/catalogs-01.jpg)">
+							<picture class="catalogs-card__img">
+								<img src="img/catalogs-01.jpg" alt="Image">
+							</picture>
+							<div class="catalogs-card__body">
+								<div class="catalogs-card__group">
+									<h3 class="catalogs-card__title">Лучшие предложения Emaar</h3>
+									<p class="catalogs-card__description">Топ-10 проектов главного застройщика Дубая</p>
+								</div>
+								<a href="#" class="catalogs-card__btn btn btn--white">Скачать каталог</a>
 							</div>
-						</div>
+						</article>
+						<article class="catalogs-card catalogs__item" style="--bg: url(../img/catalogs-02.jpg)">
+							<picture class="catalogs-card__img">
+								<img src="img/catalogs-02.jpg" alt="Image">
+							</picture>
+							<div class="catalogs-card__body">
+								<div class="catalogs-card__group">
+									<h3 class="catalogs-card__title">Для семейной жизни</h3>
+									<p class="catalogs-card__description">Наслаждайтесь семейной жизнью в Дубае</p>
+								</div>
+								<a href="#" class="catalogs-card__btn btn btn--white">Скачать каталог</a>
+							</div>
+						</article>
+						<article class="catalogs-card catalogs__item" style="--bg: url(../img/catalogs-01.jpg)">
+							<picture class="catalogs-card__img">
+								<img src="img/catalogs-01.jpg" alt="Image">
+							</picture>
+							<div class="catalogs-card__body">
+								<div class="catalogs-card__group">
+									<h3 class="catalogs-card__title">Лучшие предложения Emaar</h3>
+									<p class="catalogs-card__description">Топ-10 проектов главного застройщика Дубая</p>
+								</div>
+								<a href="#" class="catalogs-card__btn btn btn--white">Скачать каталог</a>
+							</div>
+						</article>
+						<article class="catalogs-card catalogs__item" style="--bg: url(../img/catalogs-02.jpg)">
+							<picture class="catalogs-card__img">
+								<img src="img/catalogs-02.jpg" alt="Image">
+							</picture>
+							<div class="catalogs-card__body">
+								<div class="catalogs-card__group">
+									<h3 class="catalogs-card__title">Для семейной жизни</h3>
+									<p class="catalogs-card__description">Наслаждайтесь семейной жизнью в Дубае</p>
+								</div>
+								<a href="#" class="catalogs-card__btn btn btn--white">Скачать каталог</a>
+							</div>
+						</article>
+					</div>
+					<a href="#" class="catalogs__more btn">Показать все</a>
+					<div class="pagination catalogs__pagination">
+						<ul class="pagination__list">
+							<li class="pagination__item is--active">
+								<a href="#" class="pagination__btn">1</a>
+							</li>
+							<li class="pagination__item">
+								<a href="#" class="pagination__btn">2</a>
+							</li>
+							<li class="pagination__item">
+								<a href="#" class="pagination__btn">3</a>
+							</li>
+							<li class="pagination__item">
+								<a href="#" class="pagination__btn">4</a>
+							</li>
+							<li class="pagination__item is--mobile-hidden">
+								<a href="#" class="pagination__btn">5</a>
+							</li>
+							<li class="pagination__item is--mobile-hidden">
+								<a href="#" class="pagination__btn">6</a>
+							</li>
+							<li class="pagination__item is--mobile-hidden">
+								<a href="#" class="pagination__btn">7</a>
+							</li>
+							<li class="pagination__item is--mobile-hidden">
+								<a href="#" class="pagination__btn">8</a>
+							</li>
+							<li class="pagination__item is--mobile-hidden">
+								<a href="#" class="pagination__btn">9</a>
+							</li>
+							<li class="pagination__item is--mobile-hidden">
+								<a href="#" class="pagination__btn">10</a>
+							</li>
+							<li class="pagination__item">
+								<a href="#" class="pagination__btn" disabled>...</a>
+							</li>
+							<li class="pagination__item">
+								<a href="#" class="pagination__btn">37</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</section>
-			<!-- end of contacts -->
+			<!-- end of catalogs -->
 		</div>
 		<!-- end of content -->
 		<!-- footer -->
