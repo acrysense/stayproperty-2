@@ -141,7 +141,7 @@
 								<a href="projects.html" class="breadcrumb__link">Новостройки</a>
 							</li>
 							<li class="breadcrumb__item">
-								<a href="projects-inner-01.html" class="breadcrumb__link">Sls Residences Palm</a>
+								<a href="projects-inner-02.html" class="breadcrumb__link">Sls Residences Palm</a>
 							</li>
 						</ol>
 					</nav>
@@ -416,7 +416,26 @@
 									<p>Это пляжный комплекс, который предлагает своим жителям уникальный и роскошный образ жизни. В комплексе есть ряд современных и просторных квартир с потрясающим видом на гавань и городской пейзаж Дубая.</p>
 								</div>
 							</div>
-							<div class="projects-inner__block"></div>
+							<div class="projects-inner__block">
+								<div class="section-heading">
+									<h2 class="section-heading__title">План оплаты</h2>
+								</div>
+								<div class="plans">
+									<div class="plans__wrapper">
+										<div class="plans__item">
+											<h3 class="plans__title">10%</h3>
+											<span class="plans__help">первоначальный взнос</span>
+										</div>
+										<div class="plans__item">
+											<h3 class="plans__title">ХХ квартал ХХХХ года</h3>
+											<span class="plans__help">срок рассрочки</span>
+										</div>
+									</div>
+								</div>
+								<div class="projects-inner__content projects-inner__content--indent-sm content">
+									<p>Покупка недвижимости на стадии строительства — распространённая практика среди иностранных инвесторов. Off-plan проекты обеспечивают более выгодные условия покупок.</p>
+								</div>
+							</div>
 						</div>
 						<div class="projects-inner__right">
 							<div class="projects-info projects-inner__info">
@@ -529,6 +548,85 @@
 							</div>
 						</div>
 					</div>
+					<div class="projects-inner__wrap">
+						<div class="projects-inner__wide">
+							<div class="projects-inner__block">
+								<div class="section-heading">
+									<h2 class="section-heading__title">Местоположение</h2>
+								</div>
+								<div class="location projects-inner__location">
+									<div class="location__wrapper">
+										<div class="location__map" id="location-map"></div>
+										<ul class="location__list">
+											<li class="location__item is--active">
+												<button class="location__btn">Школы</button>
+											</li>
+											<li class="location__item">
+												<button class="location__btn">Магазины</button>
+											</li>
+											<li class="location__item">
+												<button class="location__btn">Детские сады</button>
+											</li>
+											<li class="location__item">
+												<button class="location__btn">Поликлиники</button>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="projects-inner__block">
+								<div class="section-heading">
+									<h2 class="section-heading__title">поблизости</h2>
+								</div>
+								<div class="nearby">
+									<div class="nearby__wrapper">
+										<div class="nearby__item">
+											<div class="nearby__group">
+												<span class="nearby__help">Название</span>
+												<span class="nearby__value">Swiss International Scientific School</span>
+											</div>
+											<div class="nearby__group">
+												<span class="nearby__help">Адрес</span>
+												<span class="nearby__value">Swiss International Scientific School</span>
+											</div>
+											<div class="nearby__group">
+												<span class="nearby__help">Расстояние</span>
+												<span class="nearby__value">1.82 км</span>
+											</div>
+										</div>
+										<div class="nearby__item">
+											<div class="nearby__group">
+												<span class="nearby__help">Название</span>
+												<span class="nearby__value">Universal American School - Branch</span>
+											</div>
+											<div class="nearby__group">
+												<span class="nearby__help">Адрес</span>
+												<span class="nearby__value">Al Badia, Dubai Festival City</span>
+											</div>
+											<div class="nearby__group">
+												<span class="nearby__help">Расстояние</span>
+												<span class="nearby__value">1.82 км</span>
+											</div>
+										</div>
+										<div class="nearby__item">
+											<div class="nearby__group">
+												<span class="nearby__help">Название</span>
+												<span class="nearby__value">Swiss International Scientific School</span>
+											</div>
+											<div class="nearby__group">
+												<span class="nearby__help">Адрес</span>
+												<span class="nearby__value">Swiss International Scientific School</span>
+											</div>
+											<div class="nearby__group">
+												<span class="nearby__help">Расстояние</span>
+												<span class="nearby__value">1.82 км</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 			<!-- end of projects inner -->
@@ -569,76 +667,125 @@
 				</div>
 			</section>
 			<!-- end of developers -->
-			<!-- overview of areas -->
-			<section class="areas section-indent" id="areas">
+			<!-- projects -->
+			<section class="projects section-indent" id="projects">
 				<div class="container">
 					<div class="section-heading">
-						<h2 class="section-heading__title">Похожие районы</h2>
+						<h2 class="section-heading__title">Похожие жилые комплексы</h2>
 					</div>
-					<div class="areas__slider">
+					<div class="projects__slider">
 						<div class="swiper">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide">
-									<a href="#" class="areas-card areas__item">
-										<picture class="areas-card__img">
-											<img src="img/areas-01.jpg" alt="Image">
-											<span class="areas-card__status">3 комплекса</span>
-										</picture>
-										<div class="areas-card__body">
-											<span class="areas-card__title">Maritime City</span>
+									<article class="projects-card projects__item">
+										<button class="projects-card__like c-like">
+											<svg class="c-like__icon c-like__icon--default">
+												<use xlink:href="img/sprite.svg#icon-like"></use>
+											</svg>
+											<svg class="c-like__icon c-like__icon--filled">
+												<use xlink:href="img/sprite.svg#icon-like-filled"></use>
+											</svg>
+										</button>
+										<a href="#" class="projects-card__img">
+											<img src="img/projects-04.jpg" alt="Image">
+											<span class="projects-card__status">64 объекта</span>
+										</a>
+										<div class="projects-card__body">
+											<a href="#" class="projects-card__title">Mar Casa</a>
+											<div class="projects-card__inner">
+												<span class="projects-card__elem">от AED 10 500 000</span>
+											</div>
+											<div class="projects-card__inner">
+												<span class="projects-card__elem">Сдача в 2025</span>
+												<span class="projects-card__elem">от 120 м²</span>
+											</div>
 										</div>
-									</a>
+									</article>
 								</div>
 								<div class="swiper-slide">
-									<a href="#" class="areas-card areas__item">
-										<picture class="areas-card__img">
-											<img src="img/areas-02.jpg" alt="Image">
-											<span class="areas-card__status">7 комплексов</span>
-										</picture>
-										<div class="areas-card__body">
-											<span class="areas-card__title">Dubai International Financial Center (DIFS)</span>
+									<article class="projects-card projects__item">
+										<button class="projects-card__like c-like">
+											<svg class="c-like__icon c-like__icon--default">
+												<use xlink:href="img/sprite.svg#icon-like"></use>
+											</svg>
+											<svg class="c-like__icon c-like__icon--filled">
+												<use xlink:href="img/sprite.svg#icon-like-filled"></use>
+											</svg>
+										</button>
+										<a href="#" class="projects-card__img">
+											<img src="img/projects-05.jpg" alt="Image">
+											<span class="projects-card__status">3 объекта</span>
+										</a>
+										<div class="projects-card__body">
+											<a href="#" class="projects-card__title">Creek Waters</a>
+											<div class="projects-card__inner">
+												<span class="projects-card__elem">от AED 10 500 000</span>
+											</div>
+											<div class="projects-card__inner">
+												<span class="projects-card__elem">Сдача в 2025</span>
+												<span class="projects-card__elem">от 120 м²</span>
+											</div>
 										</div>
-									</a>
+									</article>
 								</div>
 								<div class="swiper-slide">
-									<a href="#" class="areas-card areas__item">
-										<picture class="areas-card__img">
-											<img src="img/areas-03.jpg" alt="Image">
-											<span class="areas-card__status">2 комплекса</span>
-										</picture>
-										<div class="areas-card__body">
-											<span class="areas-card__title">Dubai Residence Complex</span>
+									<article class="projects-card projects__item">
+										<button class="projects-card__like c-like">
+											<svg class="c-like__icon c-like__icon--default">
+												<use xlink:href="img/sprite.svg#icon-like"></use>
+											</svg>
+											<svg class="c-like__icon c-like__icon--filled">
+												<use xlink:href="img/sprite.svg#icon-like-filled"></use>
+											</svg>
+										</button>
+										<a href="#" class="projects-card__img">
+											<img src="img/projects-06.jpg" alt="Image">
+											<span class="projects-card__status">17 объектов</span>
+										</a>
+										<div class="projects-card__body">
+											<a href="#" class="projects-card__title">Serene Gardens</a>
+											<div class="projects-card__inner">
+												<span class="projects-card__elem">от AED 10 500 000</span>
+											</div>
+											<div class="projects-card__inner">
+												<span class="projects-card__elem">Сдача в 2025</span>
+												<span class="projects-card__elem">от 120 м²</span>
+											</div>
 										</div>
-									</a>
+									</article>
 								</div>
 								<div class="swiper-slide">
-									<a href="#" class="areas-card areas__item">
-										<picture class="areas-card__img">
-											<img src="img/areas-04.jpg" alt="Image">
-											<span class="areas-card__status">3 комплекса</span>
-										</picture>
-										<div class="areas-card__body">
-											<span class="areas-card__title">Maritime City</span>
+									<article class="projects-card projects__item">
+										<button class="projects-card__like c-like">
+											<svg class="c-like__icon c-like__icon--default">
+												<use xlink:href="img/sprite.svg#icon-like"></use>
+											</svg>
+											<svg class="c-like__icon c-like__icon--filled">
+												<use xlink:href="img/sprite.svg#icon-like-filled"></use>
+											</svg>
+										</button>
+										<a href="#" class="projects-card__img">
+											<img src="img/projects-04.jpg" alt="Image">
+											<span class="projects-card__status">64 объекта</span>
+										</a>
+										<div class="projects-card__body">
+											<a href="#" class="projects-card__title">Mar Casa</a>
+											<div class="projects-card__inner">
+												<span class="projects-card__elem">от AED 10 500 000</span>
+											</div>
+											<div class="projects-card__inner">
+												<span class="projects-card__elem">Сдача в 2025</span>
+												<span class="projects-card__elem">от 120 м²</span>
+											</div>
 										</div>
-									</a>
-								</div>
-								<div class="swiper-slide">
-									<a href="#" class="areas-card areas__item">
-										<picture class="areas-card__img">
-											<img src="img/areas-01.jpg" alt="Image">
-											<span class="areas-card__status">3 комплекса</span>
-										</picture>
-										<div class="areas-card__body">
-											<span class="areas-card__title">Maritime City</span>
-										</div>
-									</a>
+									</article>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<!-- end of overview of areas -->
+			<!-- end of projects -->
 		</div>
 		<!-- end of content -->
 		<!-- footer -->
