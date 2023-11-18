@@ -186,6 +186,7 @@
 							</div>
 						</div>
 					</div>
+					<div class="contacts__map" id="contacts-map"></div>
 				</div>
 			</section>
 			<!-- end of contacts -->
@@ -568,6 +569,278 @@
 	<!-- scripts -->
 	<script src="js/vendor.min.js"></script>
 	<script src="js/app.min.js"></script>
+	<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoUcfzDx4O1ZbXxKOGKh3vUUONR717CME&&callback=initialize"></script>
+	<script>
+		function initialize() {
+			var featureOpts = [{
+					"featureType": "administrative",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#E9ECF5"
+					}]
+				},
+				{
+					"featureType": "administrative",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#E2E6EF"
+					}]
+				},
+				{
+					"featureType": "administrative",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#6C6F78"
+					}]
+				},
+				{
+					"featureType": "administrative.neighborhood",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"lightness": 25
+					}]
+				},
+				{
+					"featureType": "administrative.land_parcel",
+					"elementType": "labels",
+					"stylers": [{
+						// "visibility": "off"
+					}]
+				},
+				{
+					"featureType": "landscape.man_made",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#f7f7f7"
+					}]
+				},
+				{
+					"featureType": "landscape.man_made",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#ffffff"
+					}]
+				},
+				{
+					"featureType": "landscape.natural",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#E9ECF5"
+					}]
+				},
+				{
+					"featureType": "landscape.natural",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#6C6F78"
+					}]
+				},
+				{
+					"featureType": "landscape.natural.terrain",
+					"elementType": "all",
+					"stylers": [{
+						"visibility": "off"
+					}]
+				},
+				{
+					"featureType": "poi",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#f7f7f7"
+					}]
+				},
+				{
+					"featureType": "poi",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#BDC0C9"
+					}]
+				},
+				{
+					"featureType": "poi",
+					"elementType": "labels.icon",
+					"stylers": [{
+						"saturation": -100
+					}]
+				},
+				{
+					"featureType": "poi.park",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#f7f7f7"
+					}]
+				},
+				{
+					"featureType": "poi.park",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#f7f7f7"
+					}]
+				},
+				{
+					"featureType": "poi.sports_complex",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#f7f7f7"
+					}]
+				},
+				{
+					"featureType": "poi.sports_complex",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#f7f7f7"
+					}]
+				},
+				{
+					"featureType": "road",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#FFFFFF"
+					}]
+				},
+				{
+					"featureType": "road",
+					"elementType": "labels.icon",
+					"stylers": [{
+							"saturation": -45
+						},
+						{
+							"lightness": 10
+						},
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "road.highway",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#FFFFFF"
+					}]
+				},
+				{
+					"featureType": "road.highway",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#FFFFFF"
+					}]
+				},
+				{
+					"featureType": "road.arterial",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#FFFFFF"
+					}]
+				},
+				{
+					"featureType": "road.arterial",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#FFFFFF"
+					}]
+				},
+				{
+					"featureType": "road.local",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#FFFFFF"
+					}]
+				},
+				{
+					"featureType": "road.local",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#FFFFFF"
+					}]
+				},
+				{
+					"featureType": "road.local",
+					"elementType": "labels",
+					"stylers": [{
+						"visibility": "off"
+					}]
+				},
+				{
+					"featureType": "transit",
+					"elementType": "labels.icon",
+					"stylers": [{
+						"saturation": -70
+					}]
+				},
+				{
+					"featureType": "transit.line",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#6C6F78"
+					}]
+				},
+				{
+					"featureType": "transit.station",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#6C6F78"
+					}]
+				},
+				{
+					"featureType": "transit.station.airport",
+					"elementType": "geometry.fill",
+					"stylers": [{
+							"saturation": -100
+						},
+						{
+							"lightness": -5
+						}
+					]
+				},
+				{
+					"featureType": "water",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#e4e4e4"
+					}]
+				}
+			];
+			myMapOptions = {
+				zoom: 18,
+				// scrollwheel: false,
+				mapTypeControl: false,
+				//disableDefaultUI: true,
+				center: new google.maps.LatLng(36.5381797, window.innerWidth > 1200 ? 32.0361948 : 32.0381948),
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				styles: featureOpts
+			};
+
+			map = new google.maps.Map(document.getElementById('contacts-map'), myMapOptions);
+			marker = new google.maps.Marker({
+				position: new google.maps.LatLng(36.5381797, 32.0381948),
+				map: map,
+				zoo: 18,
+				icon: "img/map-pin.svg"
+			});
+			// map.setCenter(marker.getPosition());
+			// map.setCenter(new google.maps.LatLng(36.5381797,32.0381948));
+
+			// marker = new google.maps.Marker({
+			// 	position: new google.maps.LatLng(36.5381797,32.0381948),
+			// 	map: map,
+			// 	zoo: 18,
+			// 	icon: "map-pin.svg",
+			// 	title: "Stay Property"
+			// });
+			//
+			// marker = new google.maps.Marker({
+			// 	position: new google.maps.LatLng(36.5381797,32.0381948),
+			// 	map: map,
+			// 	zoo: 18,
+			// 	zIndex: 10
+			// // icon: "/local/templates/stayproperty/img/map-pin.svg"
+			// });
+
+			// if(!!marker && !!marker.getPosition())
+			// 	map.setCenter(marker.getPosition());
+		}
+	</script>
 </body>
 
 </html>

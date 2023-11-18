@@ -408,16 +408,16 @@
 										<div class="location__map" id="location-map"></div>
 										<ul class="location__list">
 											<li class="location__item is--active">
-												<button class="location__btn">Школы</button>
+												<button class="location__btn" onclick="toggleMarkers('schools',this)">Школы</button>
 											</li>
 											<li class="location__item">
-												<button class="location__btn">Магазины</button>
+												<button class="location__btn" onclick="toggleMarkers('shops',this)">Магазины</button>
 											</li>
 											<li class="location__item">
-												<button class="location__btn">Детские сады</button>
+												<button class="location__btn" onclick="toggleMarkers('gardens',this)">Детские сады</button>
 											</li>
 											<li class="location__item">
-												<button class="location__btn">Поликлиники</button>
+												<button class="location__btn" onclick="toggleMarkers('clinics',this)">Поликлиники</button>
 											</li>
 										</ul>
 									</div>
@@ -1063,6 +1063,375 @@
 	<!-- scripts -->
 	<script src="js/vendor.min.js"></script>
 	<script src="js/app.min.js"></script>
+	<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoUcfzDx4O1ZbXxKOGKh3vUUONR717CME&&callback=initialize"></script>
+	<script>
+		function initialize() {
+			var featureOpts = [{
+					"featureType": "administrative",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#E9ECF5"
+					}]
+				},
+				{
+					"featureType": "administrative",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#E2E6EF"
+					}]
+				},
+				{
+					"featureType": "administrative",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#6C6F78"
+					}]
+				},
+				{
+					"featureType": "administrative.neighborhood",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"lightness": 25
+					}]
+				},
+				{
+					"featureType": "administrative.land_parcel",
+					"elementType": "labels",
+					"stylers": [{
+						// "visibility": "off"
+					}]
+				},
+				{
+					"featureType": "landscape.man_made",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#f7f7f7"
+					}]
+				},
+				{
+					"featureType": "landscape.man_made",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#ffffff"
+					}]
+				},
+				{
+					"featureType": "landscape.natural",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#E9ECF5"
+					}]
+				},
+				{
+					"featureType": "landscape.natural",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#6C6F78"
+					}]
+				},
+				{
+					"featureType": "landscape.natural.terrain",
+					"elementType": "all",
+					"stylers": [{
+						"visibility": "off"
+					}]
+				},
+				{
+					"featureType": "poi",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#f7f7f7"
+					}]
+				},
+				{
+					"featureType": "poi",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#BDC0C9"
+					}]
+				},
+				{
+					"featureType": "poi",
+					"elementType": "labels.icon",
+					"stylers": [{
+						// "saturation": -100,
+						"visibility": "off"
+					}]
+				},
+				{
+					"featureType": "poi.park",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#f7f7f7"
+					}]
+				},
+				{
+					"featureType": "poi.park",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#f7f7f7"
+					}]
+				},
+				{
+					"featureType": "poi.sports_complex",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#f7f7f7"
+					}]
+				},
+				{
+					"featureType": "poi.sports_complex",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#f7f7f7"
+					}]
+				},
+				{
+					"featureType": "road",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#FFFFFF"
+					}]
+				},
+				{
+					"featureType": "road",
+					"elementType": "labels.icon",
+					"stylers": [{
+							"saturation": -45
+						},
+						{
+							"lightness": 10
+						},
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "road.highway",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#FFFFFF"
+					}]
+				},
+				{
+					"featureType": "road.highway",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#FFFFFF"
+					}]
+				},
+				{
+					"featureType": "road.arterial",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#FFFFFF"
+					}]
+				},
+				{
+					"featureType": "road.arterial",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#FFFFFF"
+					}]
+				},
+				{
+					"featureType": "road.local",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#FFFFFF"
+					}]
+				},
+				{
+					"featureType": "road.local",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#FFFFFF"
+					}]
+				},
+				{
+					"featureType": "road.local",
+					"elementType": "labels",
+					"stylers": [{
+						"visibility": "off"
+					}]
+				},
+				{
+					"featureType": "transit",
+					"elementType": "labels.icon",
+					"stylers": [{
+						"saturation": -70
+					}]
+				},
+				{
+					"featureType": "transit.line",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#6C6F78"
+					}]
+				},
+				{
+					"featureType": "transit.station",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#6C6F78"
+					}]
+				},
+				{
+					"featureType": "transit.station.airport",
+					"elementType": "geometry.fill",
+					"stylers": [{
+							"saturation": -100
+						},
+						{
+							"lightness": -5
+						}
+					]
+				},
+				{
+					"featureType": "water",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#e4e4e4"
+					}]
+				}
+			];
+			myMapOptions = {
+				zoom: 17,
+				// scrollwheel: false,
+				mapTypeControl: false,
+				//disableDefaultUI: true,
+				center: new google.maps.LatLng(36.5381797, window.innerWidth > 1200 ? 32.0361948 : 32.0381948),
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				styles: featureOpts
+			};
+
+			map = new google.maps.Map(document.getElementById('location-map'), myMapOptions);
+
+			marker = new google.maps.Marker({
+				position: new google.maps.LatLng(36.5381797, 32.0381948),
+				map: map,
+				icon: "img/map-pin.svg"
+			});
+
+
+			arSchools.forEach((item) => {
+				console.log(item);
+				arSchoolsMarkers.push(
+					new google.maps.Marker({
+						position: new google.maps.LatLng(item[0], item[1]),
+						map: map,
+						icon: "img/map-dot.svg",
+						title: item[2]
+					})
+				)
+			})
+			arShops.forEach((item) => {
+				arShopsMarkers.push(
+					new google.maps.Marker({
+						position: new google.maps.LatLng(item[0], item[1]),
+						map: map,
+						icon: "img/map-dot.svg",
+						title: item[2],
+						visible: false
+					})
+				)
+			})
+			arGardens.forEach((item) => {
+				arGardensMarkers.push(
+					new google.maps.Marker({
+						position: new google.maps.LatLng(item[0], item[1]),
+						map: map,
+						icon: "img/map-dot.svg",
+						title: item[2],
+						visible: false
+					})
+				)
+			})
+			arClinics.forEach((item) => {
+				arClinicsMarkers.push(
+					new google.maps.Marker({
+						position: new google.maps.LatLng(item[0], item[1]),
+						map: map,
+						icon: "img/map-dot.svg",
+						title: item[2],
+						visible: false
+					})
+				)
+			})
+			// map.setCenter(marker.getPosition());
+			// map.setCenter(new google.maps.LatLng(36.5381797,32.0381948));
+
+			// marker = new google.maps.Marker({
+			// 	position: new google.maps.LatLng(36.5381797,32.0381948),
+			// 	map: map,
+			// 	zoo: 18,
+			// 	icon: "map-pin.svg",
+			// 	title: "Stay Property"
+			// });
+			//
+			// marker = new google.maps.Marker({
+			// 	position: new google.maps.LatLng(36.5381797,32.0381948),
+			// 	map: map,
+			// 	zoo: 18,
+			// 	zIndex: 10
+			// // icon: "/local/templates/stayproperty/img/map-pin.svg"
+			// });
+
+			// if(!!marker && !!marker.getPosition())
+			// 	map.setCenter(marker.getPosition());
+		}
+		var arSchools = [
+				[36.5371797, 32.0381948, "Title1"],
+				[36.5381797, 32.0371948, "Title2"],
+				[36.5381797, 32.0332048, "Title3"],
+			],
+			arShops = [
+				[36.5360797, 32.0381948, "Title4"],
+				[36.5370797, 32.0380948, "Title5"],
+				[36.5381797, 32.0391948, "Title6"],
+			],
+			arGardens = [
+				[36.5381797, 32.0341948, "Title7"],
+				[36.5351797, 32.0391948, "Title8"],
+				[36.5382797, 32.0351948, "Title9"],
+			],
+			arClinics = [
+				[36.5381797, 32.0341948, "Title10"],
+				[36.5361797, 32.0351948, "Title11"],
+				[36.5383797, 32.0361948, "Title12"],
+			],
+			arSchoolsMarkers = [],
+			arShopsMarkers = [],
+			arGardensMarkers = [],
+			arClinicsMarkers = [];
+
+		function toggleMarkers(type = "schools", btn) {
+			console.log(type);
+			var item = btn.parentElement;
+			if (item.classList.contains("is--active")) return false;
+			document.querySelector(".location__item.is--active").classList.remove("is--active");
+			item.classList.add("is--active");
+			arSchoolsMarkers.forEach((marker, i) => arSchoolsMarkers[i].setVisible(false))
+			arShopsMarkers.forEach((marker, i) => arShopsMarkers[i].setVisible(false))
+			arGardensMarkers.forEach((marker, i) => arGardensMarkers[i].setVisible(false))
+			arClinicsMarkers.forEach((marker, i) => arClinicsMarkers[i].setVisible(false))
+			switch (type) {
+				case "schools":
+					arSchoolsMarkers.forEach((marker, i) => arSchoolsMarkers[i].setVisible(true))
+					break;
+				case "shops":
+					arShopsMarkers.forEach((marker, i) => arShopsMarkers[i].setVisible(true))
+					break;
+				case "gardens":
+					arGardensMarkers.forEach((marker, i) => arGardensMarkers[i].setVisible(true))
+					break;
+				case "clinics":
+					arClinicsMarkers.forEach((marker, i) => arClinicsMarkers[i].setVisible(true))
+					break;
+			}
+		}
+	</script>
 </body>
 
 </html>
